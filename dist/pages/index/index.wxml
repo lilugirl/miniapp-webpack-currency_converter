@@ -1,0 +1,30 @@
+<!-- index.wxml -->
+<wxs src="./util.wxs" module="util"></wxs>
+<view class="container">
+  <view class="base-panel">
+    <!-- 基础货币部分UI -->
+    <text class="base-label">基础货币</text>
+    <view class="money-panel">
+      <image class="img" src="{{'../../image/'+baseExchangeItem.key+'.png'}}"></image>
+      <text class="unit-label">{{baseExchangeItem.key}}</text>
+      <view class="right-panel">
+        <input class="money-num base-num-input" bindinput="onBaseNumChange" value="{{baseExchangeItem.baseNum}}"></input>
+        <text class="decription-label">{{baseExchangeItem.name}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 目标货币部分UI -->
+  <view class="exchange-list">
+    <view wx:for="{{exchangeList}}" class="money-panel  top-divider" wx:key="key" wx:if="{{item.key!==baseExchangeItem.key}}" >
+      <image class="img" mode="aspectFit" src="{{'../../image/'+item.key+'.png'}}"></image>
+      <text class="unit-label">{{item.key}}</text>
+      <!-- 右侧数目和单位进行上下排布 -->
+      <view class="right-panel">
+         <text class="mony-num">{{util.formatNum(item.baseNum/baseExchangeItem.baseNum * moneyNum)}}</text>
+         <text class="decription-label">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <button size="mini" style="padding:0 16px" bindtap="onClickSwitchBaseMoney">切换</button>
+</view>

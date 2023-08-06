@@ -1,0 +1,12 @@
+<view class="exchange-list">
+  <view wx:for="{{exchangeList}}"  wx:key="key" class="money-panel top-divider" data-money-key="{{item.key}}" bindtap="onChooseBaseMoney">
+    <image class="img" mode="aspectFit" src="{{'../../image/'+item.key+'.png'}}"></image>
+    <text class="unit-label">{{item.key}}</text>
+    <view class="right-panel">
+       <text class="description-label" style="color:grey" wx:if="{{curMoneyKey===item.key}}">
+          当前基础货币
+       </text>
+       <text class="description-label">{{item.name}}</text>
+    </view>
+  </view>
+</view>

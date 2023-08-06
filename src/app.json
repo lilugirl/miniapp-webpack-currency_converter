@@ -1,0 +1,16 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/logs/logs",
+		"pages/list-render/list-render",
+		"pages/choose-base-money/index"
+	],
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "外汇兑换",
+		"navigationBarTextStyle": "black"
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json"
+}
